@@ -1,0 +1,39 @@
+[{
+    "requestEncode" : "",
+    "method" : "GET",
+    "responseEncode" : "",
+    "url" : "${bookUrl}",
+    "header" : {
+
+    },
+    "params" : {
+
+    },
+    "forbidCookie" : false,
+    "response" : {
+      "engine" : "xpath",
+      "put" : {
+        "key" : "//div[@class='infotype']/p[2]"
+      }
+    }
+  },
+  {
+    "params" : {
+
+    },
+    "method" : "GET",
+    "responseEncode" : "",
+    "forbidCookie" : false,
+    "response" : {
+      "engine" : "xpath",
+      "put" : {
+        "ok" : "//text()"
+      }
+    },
+    "header" : {
+
+    },
+    "url" : "https://long.406np.xyz/api/imgUrl?url=https://m.heifenxs.org/mytool/getVerify/?d=0.<js>return value+new Date().getTime();</js>",
+    "requestEncode" : ""
+  }
+]
