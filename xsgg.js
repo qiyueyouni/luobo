@@ -1,8 +1,7 @@
 const url = "https://cdn.jsdelivr.net/gh/bgvioletsky/QX@0.2.0/rewrite_remote/xbs/render.html";
 
 $httpClient.get({
-    url: url,
-    "binary-mode": true // 确保返回二进制数据（类似 QX 的 bodyBytes）
+    url: url
 }, function(error, response, data) {
     if (error) {
         console.log("请求失败：" + error);
