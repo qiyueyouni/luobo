@@ -1,4 +1,4 @@
-const url = "https://raw.githubusercontent.com/qiyueyouni/woshiluobo_tool/main/index.html";
+const url = "https://qiyueyouni.github.io/woshiluobo_tool/index.html";
 
 $httpClient.get(url, function(error, response, data) {
     if (error) {
