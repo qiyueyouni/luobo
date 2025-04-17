@@ -1,8 +1,8 @@
-#!name=Base64 ↔ Image Converter
-#!desc=对base64和图片进行互转
+#!name=ba64
+#!desc=ba64
 
 [Script]
-Base64ImageConverter = type=http-request, pattern=^https?:\/\/(.+\.)?Base64ImageConverter\.(com|net), script-path=https://raw.githubusercontent.com/qiyueyouni/luobo/main/tool/Base64toImage.js, requires-body=true,timeout=60
+ba64 = type=http-request, pattern=^https?:\/\/(.+\.)?ba64\.(com|net), script-path=https://raw.githubusercontent.com/qiyueyouni/luobo/main/tool/Base64toImage.js, requires-body=true,timeout=60
 
 [MITM]
-hostname = %APPEND% Base64ImageConverter.com, Base64ImageConverter.net, *.Base64ImageConverter.com, *.Base64ImageConverter.net
+hostname = %APPEND% ba64.com, ba64.net, *.ba64.com, *.ba64.net, *.ba64.xyz
