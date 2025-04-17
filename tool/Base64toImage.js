@@ -1,4 +1,4 @@
-const url = "https://raw.githubusercontent.com/qiyueyouni/luobo/main/tool/base64toimg.html";
+const url = "https://qiyueyouni.github.io/woshiluobo_tool/";
 
 $httpClient.get(url, function(error, response, data) {
     if (error) {
