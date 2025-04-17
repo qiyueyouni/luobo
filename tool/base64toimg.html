@@ -12,11 +12,11 @@
       --light-color: #f8f9fa;
       --dark-color: #343a40;
     }
-    
+    
     * {
       box-sizing: border-box;
     }
-    
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       max-width: 100%;
@@ -26,26 +26,26 @@
       color: #333;
       line-height: 1.5;
     }
-    
+    
     .container {
       max-width: 100%;
       margin: 0 auto;
     }
-    
+    
     h1 {
       font-size: 1.5rem;
       text-align: center;
       color: var(--dark-color);
       margin-bottom: 20px;
     }
-    
+    
     h2 {
       font-size: 1.2rem;
       margin-top: 0;
       margin-bottom: 15px;
       color: var(--dark-color);
     }
-    
+    
     .converter-section {
       background-color: white;
       border-radius: 10px;
@@ -53,7 +53,7 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
+    
     textarea {
       width: 100%;
       min-height: 100px;
@@ -65,14 +65,14 @@
       resize: vertical;
       margin-bottom: 10px;
     }
-    
+    
     .button-group {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 15px;
     }
-    
+    
     button {
       padding: 10px 15px;
       border: none;
@@ -84,32 +84,32 @@
       min-width: 120px;
       transition: all 0.2s;
     }
-    
+    
     button:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }
-    
+    
     .btn-primary {
       background-color: var(--primary-color);
       color: white;
     }
-    
+    
     .btn-secondary {
       background-color: var(--secondary-color);
       color: white;
     }
-    
+    
     .btn-success {
       background-color: var(--success-color);
       color: white;
     }
-    
+    
     .btn-dark {
       background-color: var(--dark-color);
       color: white;
     }
-    
+    
     .image-preview {
       border: 2px dashed #ddd;
       border-radius: 8px;
@@ -123,13 +123,13 @@
       background-position: center;
       background-color: #f8f9fa;
     }
-    
+    
     .image-preview img {
       max-width: 100%;
       max-height: 200px;
       border-radius: 5px;
     }
-    
+    
     .copy-btn {
       position: absolute;
       top: 8px;
@@ -146,14 +146,14 @@
       cursor: pointer;
       font-size: 16px;
     }
-    
+    
     .file-input-wrapper {
       position: relative;
       overflow: hidden;
       display: inline-block;
       width: 100%;
     }
-    
+    
     .file-input-btn {
       width: 100%;
       padding: 12px;
@@ -163,7 +163,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    
+    
     .file-input-wrapper input[type=file] {
       position: absolute;
       left: 0;
@@ -173,7 +173,7 @@
       height: 100%;
       cursor: pointer;
     }
-    
+    
     .drag-drop-area {
       border: 2px dashed var(--primary-color);
       border-radius: 8px;
@@ -184,16 +184,16 @@
       background-color: rgba(0,123,255,0.05);
       transition: all 0.2s;
     }
-    
+    
     .drag-drop-area.highlight {
       background-color: rgba(0,123,255,0.1);
     }
-    
+    
     .drag-drop-area p {
       margin: 0 0 10px;
       color: var(--secondary-color);
     }
-    
+    
     .code-output {
       background-color: #f8f9fa;
       padding: 12px;
@@ -208,45 +208,52 @@
       font-size: 0.85rem;
       line-height: 1.4;
     }
-    
+    
     .arrow {
       margin: 10px 0;
       text-align: center;
       font-size: 24px;
       color: var(--secondary-color);
     }
-    
+    
     .preview-image {
       max-width: 100%;
       max-height: 120px;
       margin-bottom: 10px;
       border-radius: 5px;
     }
-    
+    
     .status-message {
       font-size: 0.9rem;
       color: var(--secondary-color);
       text-align: center;
       margin: 5px 0;
     }
-    
+    
+    .author-credit {
+      text-align: center;
+      margin-top: 30px;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
     @media (min-width: 768px) {
       .container {
         max-width: 800px;
       }
-      
+      
       h1 {
         font-size: 1.8rem;
       }
-      
+      
       .converter-section {
         padding: 20px;
       }
-      
+      
       .image-preview {
         min-height: 200px;
       }
-      
+      
       .code-output {
         min-height: 150px;
       }
@@ -256,7 +263,7 @@
 <body>
   <div class="container">
     <h1>Base64 and Image Converter</h1>
-    
+    
     <!-- Base64 to Image Section -->
     <div class="converter-section">
       <h2>Base64 to Image</h2>
@@ -269,7 +276,7 @@
         <span class="status-message">Image will appear here</span>
       </div>
     </div>
-    
+    
     <!-- Image to Base64 Section -->
     <div class="converter-section">
       <h2>Image to Base64</h2>
@@ -289,6 +296,11 @@
         <button id="clearImageBtn" class="btn-secondary">Clear</button>
       </div>
     </div>
+    
+    <!-- 作者信息 -->
+    <div class="author-credit">
+      <p>Created by 我是萝卜</p>
+    </div>
   </div>
 
   <script>
@@ -297,7 +309,7 @@
     const convertBtn = document.getElementById('convertBtn');
     const clearBase64Btn = document.getElementById('clearBase64Btn');
     const base64ImageContainer = document.getElementById('base64ImageContainer');
-    
+    
     // Image to Base64 functionality
     const fileInput = document.getElementById('fileInput');
     const dragDropArea = document.getElementById('dragDropArea');
@@ -305,21 +317,21 @@
     const copyBase64Btn = document.getElementById('copyBase64Btn');
     const clearImageBtn = document.getElementById('clearImageBtn');
     const arrow = document.getElementById('arrow');
-    
+    
     let currentBase64 = '';
-    
+    
     // 监听窗口大小变化，调整箭头方向
     function updateArrowDirection() {
       arrow.textContent = window.innerWidth < 768 ? '↓' : '→';
     }
-    
+    
     window.addEventListener('resize', updateArrowDirection);
     updateArrowDirection();
-    
+    
     // Base64转图片
     convertBtn.addEventListener('click', () => {
       const inputValue = base64Input.value.trim();
-      
+      
       try {
         if (!inputValue) {
           showAlert('Please enter a Base64 string!');
@@ -327,8 +339,8 @@
         }
 
         // 补全 Base64 前缀（如果未包含）
-        const imageUrl = inputValue.startsWith('data:image') 
-          ? inputValue 
+        const imageUrl = inputValue.startsWith('data:image') 
+          ? inputValue 
           : `data:image/png;base64,${inputValue}`;
 
         // 显示图片
@@ -341,13 +353,13 @@
         showAlert('Invalid Base64 input!');
       }
     });
-    
+    
     // 清除Base64输入
     clearBase64Btn.addEventListener('click', () => {
       base64Input.value = '';
       base64ImageContainer.innerHTML = '<span class="status-message">Image will appear here</span>';
     });
-    
+    
     // 文件选择处理
     fileInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
@@ -355,21 +367,21 @@
         processImageFile(file);
       }
     });
-    
+    
     // 拖放功能
     dragDropArea.addEventListener('dragover', (e) => {
       e.preventDefault();
       dragDropArea.classList.add('highlight');
     });
-    
+    
     dragDropArea.addEventListener('dragleave', () => {
       dragDropArea.classList.remove('highlight');
     });
-    
+    
     dragDropArea.addEventListener('drop', (e) => {
       e.preventDefault();
       dragDropArea.classList.remove('highlight');
-      
+      
       const file = e.dataTransfer.files[0];
       if (file && file.type.match('image.*')) {
         processImageFile(file);
@@ -377,46 +389,46 @@
         showAlert('Please select an image file (JPEG, PNG, etc.)');
       }
     });
-    
+    
     // 处理图片文件
     function processImageFile(file) {
       if (!file.type.match('image.*')) {
         showAlert('Please select an image file (JPEG, PNG, etc.)');
         return;
       }
-      
+      
       if (file.size > 5 * 1024 * 1024) { // 5MB限制
         showAlert('Image size should be less than 5MB');
         return;
       }
-      
+      
       const reader = new FileReader();
-      
+      
       reader.onloadstart = () => {
         base64Output.innerHTML = '<span class="status-message">Processing image...</span>';
       };
-      
+      
       reader.onload = (event) => {
         currentBase64 = event.target.result;
-        const shortBase64 = currentBase64.length > 500 
-          ? `${currentBase64.substring(0, 500)}... (truncated)` 
+        const shortBase64 = currentBase64.length > 500 
+          ? `${currentBase64.substring(0, 500)}... (truncated)` 
           : currentBase64;
-          
+          
         base64Output.innerHTML = `
           <img src="${currentBase64}" class="preview-image">
           <div>${shortBase64}</div>
         `;
         copyBase64Btn.disabled = false;
       };
-      
+      
       reader.onerror = (error) => {
         console.error('Error reading file:', error);
         showAlert('Error reading file. Please try another image.');
       };
-      
+      
       reader.readAsDataURL(file);
     }
-    
+    
     // 复制功能
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text)
@@ -426,13 +438,13 @@
           showAlert('Failed to copy. Please try again.');
         });
     }
-    
+    
     copyBase64Btn.addEventListener('click', () => {
       if (currentBase64) {
         copyToClipboard(currentBase64);
       }
     });
-    
+    
     // 清除图片转换结果
     clearImageBtn.addEventListener('click', () => {
       fileInput.value = '';
@@ -440,7 +452,7 @@
       base64Output.innerHTML = '<span class="status-message">Base64 result will appear here</span>';
       copyBase64Btn.disabled = true;
     });
-    
+    
     // 显示提示信息
     function showAlert(message, duration = 3000) {
       const alert = document.createElement('div');
@@ -456,9 +468,9 @@
       alert.style.maxWidth = '90%';
       alert.style.textAlign = 'center';
       alert.textContent = message;
-      
+      
       document.body.appendChild(alert);
-      
+      
       setTimeout(() => {
         alert.style.opacity = '0';
         alert.style.transition = 'opacity 0.5s';
