@@ -2,7 +2,7 @@
 #!desc=对base64和图片进行互转
 
 [Script]
-xsgg = type=http-request, pattern=^https?:\/\/(.+\.)?Base64ImageConverter\.(com|net), script-path=https://raw.githubusercontent.com/qiyueyouni/luobo/main/tool/Base64toImage.js, requires-body=true,timeout=60
+Base64ImageConverter = type=http-request, pattern=^https?:\/\/(.+\.)?Base64ImageConverter\.(com|net), script-path=https://raw.githubusercontent.com/qiyueyouni/luobo/main/tool/Base64toImage.js, requires-body=true,timeout=60
 
 [MITM]
 hostname = %APPEND% Base64ImageConverter.com, Base64ImageConverter.net, *.Base64ImageConverter.com, *.Base64ImageConverter.net
